@@ -3,6 +3,7 @@ import { useRef, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 
+// TODO #2 Migrar isRecordingSupported como função utilitária, no diretório /utils
 const isRecordingSupported =
   'mediaDevices' in navigator &&
   'getUserMedia' in navigator.mediaDevices &&
@@ -21,6 +22,7 @@ export default function RecordRoomAudio() {
   function stopRecording() {
     setIsRecording(false)
 
+    // TODO #3 Migrar isRecorderActive como função utilitária, no diretório /utils
     if (recorder.current && recorder.current.state !== 'inactive') {
       recorder.current.stop()
     }
@@ -48,6 +50,7 @@ export default function RecordRoomAudio() {
     console.log(result)
   }
 
+  // TODO #5 Migrar createRecorder como função utilitária, no diretório /utils
   function createRecorder(audio: MediaStream) {
     recorder.current = new MediaRecorder(audio, {
       mimeType: 'audio/webm',

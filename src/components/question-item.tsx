@@ -65,6 +65,7 @@ export function QuestionItem({ question }: QuestionItemProps) {
 
           <div className="flex justify-end">
             <span className="text-muted-foreground text-xs">
+              {/* TODO #4 Trocar dayjs por função utilitária vanilla, em utils/date.ts */}
               {dayjs(question.createdAt).toNow()}
             </span>
           </div>

@@ -40,6 +40,7 @@ export default function RoomList() {
                 <h3 className="font-medium">{room.name}</h3>
                 <span className="flex items-center gap-2">
                   <Badge className="text-xs" variant="secondary">
+                    {/* TODO #4 Trocar dayjs por função utilitária vanilla, em utils/date.ts */}
                     {dayjs(room.createdAt).toNow()}
                   </Badge>
                   <Badge className="text-xs" variant="secondary">
